@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+h1{
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Poppins';
+  font-style: normal;
+  padding-top: 20px;
+  color: white;
+}
+.wrapper{
+  background: white;
+  position:static;
+  width: 100%;
+  position: absolute;
+  height: 500px;
+  height: calc(100vh);
+  overflow: hidden;
+  background:url("wall.webp");
+    background-repeat: no-repeat; 
+  background-size:cover; position: relative;
+}
+.wrapper nav{
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+}
+nav .content{
+  display: flex;
+  align-items: center;
+}
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+}
+
+.content .links li{
+  list-style: none;
+  line-height: 70px;
+}
+.content .links li a,
+.content .links li label{
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 9px 45px;
+  border-radius: 5px;
+}
+.content .links li label{
+  display: none;
+}
+
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+.wrapper .menu-icon{
+  display: none;
+}
+.wrapper #show-search:checked ~ .search-icon i::before{
+  content: "\f00d";
+}
+.wrapper .search-box{
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.wrapper #show-search:checked ~ .search-box{
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: black;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+}
+.search-box input::placeholder{
+  color: #f2f2f2;
+}
+.search-box .go-icon{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 60px;
+  width: 70px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #000000;
+  font-size: 20px;
+  cursor: pointer;
+}
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+/* Responsive code start */
+@media screen and (max-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+  .content .links li a{
+    padding: 8px 13px;
+  }
+  .wrapper .search-box{
+    max-width: calc(100% - 100px);
+  }
+  .wrapper .search-box input{
+    padding: 0 100px 0 15px;
+  }
+}
+@media screen and (max-width: 900px){
+  .wrapper .menu-icon{
+    display: block;
+  }
+  .wrapper #show-menu:checked ~ .menu-icon i::before{
+    content: "\f00d";
+  }
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: black;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left: 0;
+    max-width: 350px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    transition: all 0.3s ease;
+  }
+  nav #show-menu:checked ~ .content .links{
+    left: 0%;
+  }
+  .content .links li{
+    margin: 15px 20px;
+  }
+  .content .links li a,
+  .content .links li label{
+    line-height: 40px;
+    font-size: 20px;
+    display: block;
+    padding: 8px 18px;
+    cursor: pointer;
+  }
+  .content .links li a.desktop-link{
+    display: none;
+  }
+}
+.dummy-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  z-index: 2;
+  padding: 0 20px;
+  padding-left: 120px;
+  text-align: left;
+  transform: translate(-50%, -50%);
+}
+.dummy-text h2{
+  font-size: 30px;
+  margin: 5px 0;
+  font-family: TimesNewRoman;
+}
+#paragraph{
+   font-size: 15px;
+  margin: 5px 0;
+  color: gray;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  font-family: TimesNewRoman;
+}
+.main, {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+  .div{
+    position: relative;
+    padding-top: 50px;
+
+  }
+  .whoweare{
+  background-image: url("img/onama.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+
+
+
+}
+#paragrafi{
+  font-size: 20px;
+  text-align: center;
+  background-color: white;
+  font-family: Helvetica;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-shadow: 2px 2px 8px #0A2FF5;
+
+}
+@keyframes prvaAnimacija
+{
+  from{top: 0px;}
+  to{top:20px;}
+}
+#animacija1{
+  position: relative;
+  animation: prvaAnimacija 2s infinite;
+  animation-direction: alternate;
+}
